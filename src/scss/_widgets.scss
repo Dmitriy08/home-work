@@ -1,0 +1,51 @@
+.widget {
+  .widget-title{
+    margin-bottom: 1.3rem;
+  }
+  &.widget_info {
+    p{
+      line-height: 1.2;
+    }
+  }
+  &.widget_twitter{
+    ul{
+      list-style: none;
+      padding: 0;
+      margin: -10px 0;
+      li{
+        padding: 10px 0;
+        span{
+          display: block;
+          margin-top: 8px;
+          color: $colorMain2;
+        }
+      }
+    }
+  }
+  &.widget_contacts{
+    p{
+      line-height: 1.2;
+      &.contact-links{
+        a{
+          display: block;
+        }
+      }
+    }
+  }
+  .social-icons{
+    padding: 0;
+    list-style: none;
+    display: flex;
+    li{
+      a{
+        width: 30px;
+        height: 30px;
+        background: $lightColor;
+        display: block;
+      }
+      & + li{
+        margin-left: 5px;
+      }
+    }
+  }
+}

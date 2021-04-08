@@ -1,4 +1,18 @@
 .cs{
   background: $colorMain;
   color: $lightColor;
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: $lightColor;
+  }
+  a{
+    color: $colorMain2;
+    &:hover{
+      color: $fontColor;
+    }
+  }
 }

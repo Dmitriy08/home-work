@@ -5,13 +5,14 @@
 .page_header {
   transition: 0.5s ease-in-out;
 
-  &.affix{
+  &.affix {
     position: fixed !important;
     z-index: 1001;
     left: 0;
     right: 0;
     box-shadow: 0px -3px 8px 1px $fontColor;
   }
+
   &__wrap {
     min-height: 78px;
     position: relative;
@@ -28,7 +29,7 @@
     position: relative;
 
     span {
-      opacity: 0.5;
+      color: $colorMain2;
     }
   }
 
@@ -87,6 +88,7 @@
         flex-direction: row;
         justify-content: flex-end;
         overflow: unset;
+
         &__item {
           & + .nav__item {
             margin-top: 0;
@@ -116,7 +118,6 @@
     position: absolute;
     top: 14px;
     right: 15px;
-    padding: 0 !important;
     width: 50px;
     height: 50px;
     cursor: pointer;
@@ -124,25 +125,73 @@
     visibility: visible;
     background: $colorMain;
     transition: right 0.3s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    span {
+      width: 30px;
+      height: 2px;
+      background: $lightColor;
+      display: inline-block;
+      position: relative;
+      transition: rotate 0.3s ease-in-out;
+
+      &::before, &::after {
+        content: '';
+        width: 25px;
+        height: 2px;
+        background: $lightColor;
+        position: absolute;
+
+      }
+
+      &::before {
+        top: -6px;
+      }
+
+      &::after {
+        bottom: -6px;
+      }
+    }
   }
+
   &.mobile-active {
     .top-nav {
       left: 0;
       opacity: 1;
     }
-    .toggle_menu{
-      right: calc( 100% - 50px - 15px );
+
+    .toggle_menu {
+      right: calc(100% - 50px - 15px);
+
+      span {
+        background: transparent;
+
+        &::before {
+          transform: rotate(45deg);
+          top: 50%;
+          left: 3px;
+        }
+
+        &::after {
+          transform: rotate(-45deg);
+          top: 50%;
+          left: 3px;
+        }
+      }
     }
   }
-  @media(min-width: 575px){
-    .toggle_menu{
+
+  @media(min-width: 575px) {
+    .toggle_menu {
       display: none;
     }
   }
 }
 
 @media (max-width: 576px) {
-  .mobile-menu-active{
+  .mobile-menu-active {
     overflow: hidden;
   }
 }
