@@ -1,0 +1,147 @@
+/*
+** General Styles for HTML tags
+*/
+html {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: visible;
+}
+
+::selection {
+  color: $lightColor;
+  background-color: $colorMain;
+}
+
+body {
+  font-family: $fontBody;
+  font-size: 12px;
+  font-weight: 400;
+  background-color: $lightColor;
+  overflow: visible;
+  overflow-x: hidden;
+  //for scrollbar always seen
+  overflow-y: scroll;
+  //for scrollspy
+  position: relative;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 400;
+  line-height: 1.1em;
+  letter-spacing: 1px;
+  word-break: break-word;
+  font-family: $fontHeaders;
+  //fix for Raleway numbers
+  font-variant-numeric: lining-nums;
+  font-feature-settings: "lnum" 1;
+}
+
+h1 {
+  font-size: 50px;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+h2 {
+  font-size: 40px;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+h3 {
+  font-size: 36px;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+h4 {
+  font-size: 22px;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+h5 {
+  font-size: 20px;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+h6 {
+  font-size: 12px;
+  letter-spacing: 0.3px;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 991px) {
+  h1 {
+    font-size: 3.1rem;
+    margin-top: 1.9rem;
+  }
+  h2 {
+    font-size: 2.7rem;
+    margin-top: 1.9rem;
+  }
+  h3 {
+    font-size: 2.3rem;
+    margin-top: 1.9rem;
+  }
+  h4 {
+    font-size: 1.9rem;
+    margin-top: 1.9rem;
+  }
+  h5 {
+    font-size: 1.5rem;
+    margin-top: 1.9rem;
+  }
+  h6 {
+    font-size: 1.25rem;
+    margin-top: 1.9rem;
+  }
+}
+
+
+h1:first-child,
+h2:first-child,
+h3:first-child,
+h4:first-child,
+h5:first-child,
+h6:first-child {
+  margin-top: 0;
+}
+
+h1:last-child,
+h2:last-child,
+h3:last-child,
+h4:last-child,
+h5:last-child,
+h6:last-child {
+  margin-bottom: 0;
+}
+
+p {
+  margin-bottom: 1.5em;
+  line-height: 1.2rem;
+  &:last-child{
+    margin-bottom: 0;
+  }
+}
+
+a{
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+}
+
+img{
+  max-width: 100%;
+  height: auto;
+  overflow: hidden;
+  vertical-align: middle;
+  border-style: none;
+}

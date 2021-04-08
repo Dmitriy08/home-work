@@ -1,0 +1,12 @@
+.btn{
+  font-family: $fontHeaders;
+  font-size: 16px;
+  letter-spacing: 1px;
+  padding: 7px 12px 3px;
+  display: inline-block;
+  border: 1px solid $colorMain;
+  &_maincolor{
+    background: $colorMain;
+    color: $lightColor;
+  }
+}

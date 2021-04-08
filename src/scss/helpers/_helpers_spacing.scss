@@ -1,0 +1,174 @@
+/*
+** Vertical margins and padding for sections and columns
+*/
+
+/* Vertical padding for sections
+.s - section
+pt-* - padding top value
+pb-* - padding bottom value
+py-* - same value for top and for bottom padding
+*/
+
+//setting value not on section but for child container for section with top and bottom borders with container width
+@each $value in $section-vertical-padding {
+  .s-pt-#{$value} > [class*='container'] {
+    padding-top: #{$value}px;
+  }
+}
+
+@each $value in $section-vertical-padding {
+  .s-pb-#{$value} > [class*='container'] {
+    padding-bottom: #{$value}px;
+  }
+}
+
+@each $value in $section-vertical-padding {
+  .s-py-#{$value} > [class*='container'] {
+    padding-top: #{$value}px;
+    padding-bottom: #{$value}px;
+  }
+}
+
+@each $breakpoint-abbr, $breakpoint-value in $grid-breakpoints {
+  @media (min-width: #{$breakpoint-value}) {
+    @each $value in $section-vertical-padding {
+      .s-pt-#{$breakpoint-abbr}-#{$value} > [class*='container'] {
+        padding-top: #{$value}px;
+      }
+    }
+
+    @each $value in $section-vertical-padding {
+      .s-pb-#{$breakpoint-abbr}-#{$value} > [class*='container'] {
+        padding-bottom: #{$value}px;
+      }
+    }
+
+    @each $value in $section-vertical-padding {
+      .s-py-#{$breakpoint-abbr}-#{$value} > [class*='container'] {
+        padding-top: #{$value}px;
+        padding-bottom: #{$value}px;
+      }
+    }
+  }
+}
+
+/*
+** Horizontal padding (gutters) for columns and rows
+*/
+
+/* columns
+.c - columns
+px-* - horizontal padding value
+*/
+
+@each $value in $columns-horizontal-gutters-sum {
+  @if ($value == 0) {
+
+  }
+  .c-gutter-#{$value} [class*="col-"],
+  .row.c-gutter-#{$value} > [class*="col-"] {
+
+    //even gutter value
+    @if ($value % 2 == 0) {
+      padding-right: #{($value/2)}px;
+      padding-left: #{$value/2}px;
+    }
+      //odd gutter value
+    @else {
+      padding-right: #{(($value+1)/2 - 1)}px;
+      padding-left: #{($value+1)/2}px;
+    }
+  }
+}
+
+/* rows */
+@each $value in $columns-horizontal-gutters-sum {
+  .c-gutter-#{$value} .row,
+    //adding div tag selector for higher priority for setting classes on rows. For nested rows
+  div.row.c-gutter-#{$value} {
+
+    //even gutter value
+    @if ($value % 2 == 0) {
+      margin-left: #{(0 - $value/2)}px;
+      margin-right: #{0 - $value/2}px;
+    }
+      //odd gutter value
+    @else {
+      margin-left: #{((0 - $value+1)/2 - 1)}px;
+      margin-right: #{(0 - $value+1)/2}px;
+    }
+
+  }
+}
+
+
+/* Vertical margins for columns in sections and rows
+.c - columns
+mt-* - margin top value
+mb-* - margin bottom value
+my-* - same value for top and for bottom margin
+*/
+@each $value in $columns-vertical-margins {
+  .c-mt-#{$value} [class*="col-"],
+  .row.c-mt-#{$value} > [class*="col-"] {
+    margin-top: #{$value}px;
+  }
+}
+
+@each $value in $columns-vertical-margins {
+  .c-mb-#{$value} [class*="col-"],
+  .row.c-mb-#{$value} > [class*="col-"] {
+    margin-bottom: #{$value}px;
+  }
+}
+
+@each $value in $columns-vertical-margins {
+  .c-my-#{$value} [class*="col-"],
+  .row.c-my-#{$value} > [class*="col-"] {
+    margin-top: #{$value}px;
+    margin-bottom: #{$value}px;
+  }
+}
+
+@each $breakpoint-abbr, $breakpoint-value in $grid-breakpoints {
+  @media (min-width: #{$breakpoint-value}) {
+    @each $value in $columns-vertical-margins {
+      .c-mt-#{$breakpoint-abbr}-#{$value} [class*="col-"],
+      .row.c-mt-#{$breakpoint-abbr}-#{$value} > [class*="col-"] {
+        margin-top: #{$value}px;
+      }
+    }
+
+    @each $value in $columns-vertical-margins {
+      .c-mb-#{$breakpoint-abbr}-#{$value} [class*="col-"],
+      .row.c-mb-#{$breakpoint-abbr}-#{$value} > [class*="col-"] {
+        margin-bottom: #{$value}px;
+      }
+    }
+
+    @each $value in $columns-vertical-margins {
+      .c-my-#{$breakpoint-abbr}-#{$value} [class*="col-"],
+      .row.c-my-#{$breakpoint-abbr}-#{$value} > [class*="col-"] {
+        margin-top: #{$value}px;
+        margin-bottom: #{$value}px;
+      }
+    }
+  }
+}
+/*
+** Helper Spacer Divider
+*/
+@each $value in $dividers-height {
+  .divider-#{$value} {
+    margin-top: #{$value}px;
+  }
+}
+@each $breakpoint-abbr, $breakpoint-value in $grid-breakpoints {
+  @media (min-width: #{$breakpoint-value}) {
+    @each $value in $dividers-height {
+      .divider-#{$breakpoint-abbr}-#{$value} {
+        margin-top: #{$value}px;
+      }
+    }
+  }
+}

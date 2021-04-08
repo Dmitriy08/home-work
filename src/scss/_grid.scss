@@ -1,0 +1,49 @@
+.container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+}
+
+[class*='col-']{
+  position: relative;
+  width: 100%;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+@for $width from 1 through $columns {
+  .col-#{$width} {
+    flex: 0 0 $width / $columns * 100%;
+    max-width: $width / $columns * 100%;
+  }
+}
+
+@each $breakpoint-abbr, $breakpoint-value in $grid-breakpoints {
+  @media (min-width: #{$breakpoint-value}) {
+    @for $width from 1 through $columns {
+      .col-#{$breakpoint-abbr}-#{$width} {
+        flex: 0 0 $width / $columns * 100%;
+        max-width: $width / $columns * 100%;
+      }
+    }
+  }
+}
+
+@each $breakpoint-abbr, $breakpoint-value in $container-max-widths {
+  @media (min-width: #{$breakpoint-abbr}) {
+    .container {
+      max-width: #{$breakpoint-value};
+    }
+  }
+}
+

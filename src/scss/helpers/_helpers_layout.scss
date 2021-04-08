@@ -1,0 +1,20 @@
+
+//.fs-XX { font-size: XXpx }
+@each $value in $font-size-helpers {
+  .fs-#{$value} {
+    font-size: #{$value}px;
+  }
+}
+
+
+.align-items-center{
+  align-items: center;
+}
+
+[class*='divider-'] {
+  width: 100%;
+  clear: both;
+  &:last-child {
+    order: 10000;
+  }
+}

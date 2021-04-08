@@ -1,0 +1,23 @@
+.special-heading {
+  margin-top: 0;
+  margin-bottom: 0;
+  &_with-decoration {
+    overflow: hidden;
+    span{
+      position: relative;
+      padding-right: 20px;
+      &:after{
+        content: '';
+        display: inline-block;
+        background: url("../img/pattern.png");
+        height: 20px;
+        width: 10000px;
+        position: absolute;
+        top: 46%;//correction fo font, it must be 50%
+        transform: translateY(-50%);
+        left: 100%;
+
+      }
+    }
+  }
+}
