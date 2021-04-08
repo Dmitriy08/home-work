@@ -1,4 +1,5 @@
 import 'slick-slider'
+import Affix from "./modules/affix";
 
 function toggleMobileMenu(body, header){
     header.find('.toggle_menu').on('click', function () {
@@ -13,6 +14,7 @@ $(document).ready(function() {
     let $header = $('.page_header');
 
     toggleMobileMenu($body, $header);
+    new Affix('.page_header').toggleAffix();
 
     $('.intro').slick({
         slidesToShow: 1,

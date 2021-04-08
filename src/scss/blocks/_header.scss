@@ -1,7 +1,17 @@
 /*
 ** Header Style
 */
+
 .page_header {
+  transition: 0.5s ease-in-out;
+
+  &.affix{
+    position: fixed !important;
+    z-index: 1001;
+    left: 0;
+    right: 0;
+    box-shadow: 0px -3px 8px 1px $fontColor;
+  }
   &__wrap {
     min-height: 78px;
     position: relative;
