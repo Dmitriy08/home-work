@@ -5,6 +5,7 @@
 //Variables For Color
 $colorMain: var(--colorMain);
 $colorMain2: var(--colorMain2);
+$colorMain3: var(--colorMain3);
 
 $fontColor: var(--fontColor);
 
@@ -48,4 +49,4 @@ $dividers-height: 20;
 
 $columns-vertical-margins: 0 20 40;
 
-$columns-horizontal-gutters-sum: 40 20;
+$columns-horizontal-gutters-sum: 80 40 20;

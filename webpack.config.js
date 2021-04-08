@@ -110,20 +110,12 @@ const config = {
     new CopyPlugin({
       patterns: [
         {
-          from: "./src/fonts",
-          to: "./fonts",
-        },
-        {
           from: "./src/favicon",
           to: "./favicon",
         },
         {
           from: "./src/img",
           to: "./img",
-        },
-        {
-          from: "./src/css",
-          to: "./css",
         },
       ],
     }),
